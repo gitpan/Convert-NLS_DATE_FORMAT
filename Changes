@@ -1,5 +1,9 @@
 Revision history for Perl extension Convert::nls_date_format.
 
+0.03  Tue Oct 11 20:48:56 2011
+	- added ability to specify subsecond granularity
+	  (Thank you Jon Bjornstad and Zefram)
+
 0.02  Fri Nov  3 14:54:52 2006
 	- cleaned up for CPAN
 

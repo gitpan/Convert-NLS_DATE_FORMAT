@@ -20,6 +20,10 @@ our %tests = (
     'DD-MON-RR HH.MI.SSXFF AM TZR' => '%d-%b-%y %I.%M.%S.%6N %p %Z', # default NLS_TIMESTAMP_TZ_FORMAT
     'Day, DD Month, YYYY'          => '%A, %d %B, %Y',
     'YYYY - Q'                     => '%Y - %{quarter}',
+    'DD-MON-RR HH.MI.SSXFF9 AM'    => '%d-%b-%y %I.%M.%S.%9N %p',
+    'DD-MON-RR HH.MI.SSXFF6 AM'    => '%d-%b-%y %I.%M.%S.%6N %p',
+    'DD-MON-RR HH.MI.SSXFF AM'     => '%d-%b-%y %I.%M.%S.%6N %p',
+    'DD-MON-RR HH.MI.SSXFF3 AM'    => '%d-%b-%y %I.%M.%S.%3N %p',
 );
 };
 BEGIN { plan tests => scalar(keys %tests) + 1 };

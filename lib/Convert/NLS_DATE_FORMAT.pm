@@ -11,7 +11,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(oracle2posix posix2oracle) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw();
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 our @formats = (
     Q     => '%{quarter}', # quarter number
@@ -55,6 +55,9 @@ our @formats = (
     AD    => '',
     'B.C.'=> '', # displays B.C. or A.D.
     'A.D.'=> '',
+    XFF9  => '.%9N', # special case until X can translate to %{decimal}
+    XFF6  => '.%6N', # special case until X can translate to %{decimal}
+    XFF3  => '.%3N', # special case until X can translate to %{decimal}
     XFF   => '.%6N', # special case until X can translate to %{decimal}
     FF    => '%6N',
     TZHTZM=> '%z', # time zone hour offset from UTC
@@ -173,7 +176,7 @@ Nathan Gray, E<lt>kolibrie@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2005, 2006 Nathan Gray
+Copyright (C) 2005, 2006, 2011 Nathan Gray
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.4 or,
