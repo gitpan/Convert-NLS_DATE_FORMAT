@@ -3,10 +3,9 @@
 
 #########################
 
-# change 'tests => 1' to 'tests => last_test_to_print';
+use Test::More;
+use Convert::NLS_DATE_FORMAT;
 
-use Test;
-BEGIN {
 our %tests = (
     'YYYY-MM-DD HH24:MI:SS TZR'    => '%Y-%m-%d %H:%M:%S %Z',
     'YYYY-MM-DD HH24:MI:SS TZHTZM' => '%Y-%m-%d %H:%M:%S %z',
@@ -20,10 +19,8 @@ our %tests = (
     'Day, DD Month, YYYY'          => '%A, %d %B, %Y',
     'YYYY - Q'                     => '%Y - %{quarter}',
 );
-};
-BEGIN { plan tests => scalar(keys %tests) + 1 };
-use Convert::NLS_DATE_FORMAT;
-ok(1); # If we made it this far, we're ok.
+
+plan tests => scalar(keys %tests);
 
 #########################
 
@@ -31,5 +28,5 @@ ok(1); # If we made it this far, we're ok.
 # its man page ( perldoc Test::More ) for help writing this test script.
 
 while (my ($nls, $strf) = each %tests) {
-    ok(Convert::NLS_DATE_FORMAT::posix2oracle($strf), $nls, $strf);
+    is(Convert::NLS_DATE_FORMAT::posix2oracle($strf), $nls, $strf);
 }

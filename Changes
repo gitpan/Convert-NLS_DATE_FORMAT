@@ -1,5 +1,9 @@
 Revision history for Perl extension Convert::nls_date_format.
 
+0.04  Mon Jan 16 15:09:56 2012
+	- remove quotes from quoted strings within oracle formats
+	  (Thank you Yanick Champoux)
+
 0.03  Tue Oct 11 20:48:56 2011
 	- added ability to specify subsecond granularity
 	  (Thank you Jon Bjornstad and Zefram)

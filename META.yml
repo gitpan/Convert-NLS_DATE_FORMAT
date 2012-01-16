@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Convert-NLS_DATE_FORMAT
-version:            0.03
+version:            0.04
 abstract:           Convert Oracle NLS_DATE_FORMAT <-> strftime Format Strings
 author:
     - Nathan Gray <kolibrie@cpan.org>
