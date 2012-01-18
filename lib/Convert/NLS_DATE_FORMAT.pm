@@ -11,7 +11,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(oracle2posix posix2oracle) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw();
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 our @formats = (
     [ Q     => '%{quarter}' ], # quarter number
@@ -91,7 +91,7 @@ sub _convert_oracle2posix {
         my ($key, $value) = @$pair;
 
         # all are case insensitive except am/pm
-        $key = qr/$key/i unless $key ~~ m/^[ap]m$/i;
+        $key = qr/$key/i unless $key =~ m/^[ap]m$/i;
 
         # translate formats found in $oracle_format
         if ($string =~ /(?<!%)$key/) {
